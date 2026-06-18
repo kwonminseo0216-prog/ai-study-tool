@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI 고등 교육학 지문 분석 대시보드</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <div class="logo-section">
+                <i class="fa-solid fa-graduation-cap"></i>
+                <h2>EduAI Dashboard</h2>
+            </div>
+            <nav class="nav-menu">
+                <a href="#" class="active"><i class="fa-solid fa-chart-pie"></i> 분석 대시보드</a>
+                <a href="#" id="history-menu-btn"><i class="fa-solid fa-history"></i> 분석 히스토리 (<span id="history-count">0</span>)</a>
+            </nav>
+            <div class="sidebar-footer">
+                <p>로컬 오프라인 모드 작동 중</p>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <header class="main-header">
+                <div class="header-title">
+                    <h1>고등 교육학 지문 심층 분석 시스템</h1>
+                    <p>수능 및 모의고사 교육학 지문을 다각도로 분석하여 맞춤형 퀴즈와 시각 자료를 제공합니다.</p>
+                </div>
+            </header>
+
+            <section class="input-section card">
+                <div class="section-header">
+                    <h3><i class="fa-solid fa-pen-to-square"></i> 분석할 지문 입력</h3>
+                </div>
+                <textarea id="passage-input" placeholder="이곳에 분석하고 싶은 고등 교육학 또는 수능/모의고사 비문학 지문을 입력하세요..."></textarea>
+                <div class="input-controls">
+                    <button id="analyze-btn" class="btn btn-primary">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i> AI 심층 분석 시작
+                    </button>
+                </div>
+            </section>
+
+            <div class="dashboard-grid">
+                <section class="card summary-box">
+                    <h3><i class="fa-solid fa-file-invoice"></i> 구조화 요약 리포트</h3>
+                    <div id="summary-content" class="placeholder-text">지문을 입력하고 분석을 시작하면 구조화 요약이 제공됩니다.</div>
+                </section>
+
+                <section class="card chart-box">
+                    <h3><i class="fa-solid fa-chart-column"></i> 핵심 키워드 빈도 및 워드클라우드</h3>
+                    <div id="chart-container" class="placeholder-text">시각화 그래프 영역</div>
+                </section>
+
+                <section class="card diagram-box">
+                    <h3><i class="fa-solid fa-diagram-project"></i> 지문 논리 구조 마인드맵</h3>
+                    <div id="diagram-container" class="placeholder-text">논리 구조 다이어그램 영역</div>
+                </section>
+
+                <section class="card vocab-box">
+                    <h3><i class="fa-solid fa-book"></i> 어휘 지도 및 중요 단어장</h3>
+                    <div id="vocab-container" class="placeholder-text">핵심 어휘 풀이 영역</div>
+                </section>
+
+                <section class="card quiz-box">
+                    <h3><i class="fa-solid fa-lightbulb"></i> AI 출제 변형 문제</h3>
+                    <div id="quiz-container" class="placeholder-text">객관식 및 주관식 변형 문제 영역</div>
+                </section>
+
+                <section class="card chat-box">
+                    <h3><i class="fa-solid fa-comments"></i> 1:1 AI 교육학 멘토 질의응답</h3>
+                    <div id="chat-window" class="chat-window">
+                        <div class="teacher-msg" style="padding: 10px; background: var(--bg-secondary, #f1f5f9); border-radius: 8px; font-size: 0.85rem;">
+                            <strong>👨‍🏫 AI 1:1 교육학 멘토</strong><br><br>
+                            안녕하세요! 분석된 지문이나 교육학 개념에 대해 궁금한 점이 있다면 언제든 아래에 질문해 주세요.
+                        </div>
+                    </div>
+                    <div class="chat-input-area">
+                        <input type="text" id="chat-input" placeholder="선생님에게 질문할 내용을 입력하세요... (엔터 또는 전송)">
+                        <button id="chat-send-btn"><i class="fa-solid fa-paper-plane"></i></button>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <script type="module" src="app.js"></script>
+</body>
+</html>
